@@ -5,15 +5,84 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:background="@color/white">
 
-    <TextView
+    <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
+        app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintEnd_toEndOf="parent"
+        android:orientation="vertical"
+        android:gravity="center_horizontal">
+
+        <TextView
+            android:id="@+id/tvHowsYourDay"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/hows_day"
+            android:textSize="30sp"/>
+        
+        <TextView
+            android:id="@+id/tvSelect"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/please_select"
+            android:textSize="22sp"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp"/>
+
+        <TextView
+            android:id="@+id/tvGuide"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/guide"
+            android:textSize="8sp"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="20dp"/>
+
+        <include
+            android:id="@+id/lyHappy"
+            layout="@layout/layout_container"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp"/>
+
+        <include
+            android:id="@+id/lyHappy"
+            layout="@layout/layout_container"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp"/>
+
+        <include
+            android:id="@+id/lyHappy"
+            layout="@layout/layout_container"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp"/>
+
+        <include
+            android:id="@+id/lyHappy"
+            layout="@layout/layout_container"/>
+
+        <Space
+            android:layout_width="0dp"
+            android:layout_height="16dp"/>
+
+        <include
+            android:id="@+id/lyHappy"
+            layout="@layout/layout_container"/>
+
+    </LinearLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
