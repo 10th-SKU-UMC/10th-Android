@@ -45,42 +45,46 @@
 
         <Space
             android:layout_width="0dp"
-            android:layout_height="20dp"/>
+            android:layout_height="40dp"/>
 
+        <!--    행복    -->
         <include
             android:id="@+id/lyHappy"
             layout="@layout/layout_container"/>
 
         <Space
             android:layout_width="0dp"
-            android:layout_height="16dp"/>
+            android:layout_height="24dp"/>
 
+        <!--   신남    -->
         <include
-            android:id="@+id/lyHappy"
+            android:id="@+id/lyExciting"
             layout="@layout/layout_container"/>
 
         <Space
             android:layout_width="0dp"
-            android:layout_height="16dp"/>
+            android:layout_height="24dp"/>
 
+        <!--   쏘쏘    -->
         <include
-            android:id="@+id/lyHappy"
+            android:id="@+id/lyIdle"
             layout="@layout/layout_container"/>
 
         <Space
             android:layout_width="0dp"
-            android:layout_height="16dp"/>
+            android:layout_height="24dp"/>
 
+        <!--    불안    -->
         <include
-            android:id="@+id/lyHappy"
+            android:id="@+id/lyWorry"
             layout="@layout/layout_container"/>
 
         <Space
             android:layout_width="0dp"
-            android:layout_height="16dp"/>
-
+            android:layout_height="24dp"/>
+        <!--    화남    -->
         <include
-            android:id="@+id/lyHappy"
+            android:id="@+id/lyAngry"
             layout="@layout/layout_container"/>
 
     </LinearLayout>
