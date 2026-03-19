@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fillViewport="true">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center_horizontal"
+        android:padding="20dp"
+        >
+        <!--   appBar 부분     -->
+        <ImageView
+            android:id="@+id/iv_leftarrow"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="start"
+            android:src="@drawable/ic_leftarrow"
+            android:layout_marginTop="8dp"/>
+
+        <!--   Body부분     -->
+        <TextView
+            android:id="@+id/tv_title"
+            android:fontFamily="@font/nanum_garmaesgeur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="오늘 하루는 어땠나요?"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            android:id="@+id/tv_subtitle"
+            android:fontFamily="@font/nanum_garmaesgeur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="감정 우표를 선택해주세요"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="8dp"/>
+
+        <TextView
+            android:id="@+id/tv_desc"
+            android:fontFamily="@font/nanum_garmaesgeur"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="선택한 감정우표를 기반으로 맞춤형 질문이 배달됩니다"
+            android:textSize="15sp"
+            android:layout_marginTop="20dp"
+            />
+        <Space
+            android:layout_width="match_parent"
+            android:layout_height="10dp"/>
+
+        <!--    감정 선택 부분    -->
+        <include
+            android:id="@+id/emotion_happy"
+            layout="@layout/item_emotion"
+            />
+        <include
+            android:id="@+id/emotion_exciting"
+            layout="@layout/item_emotion"/>
+
+        <include
+            android:id="@+id/emotion_normal"
+            layout="@layout/item_emotion"/>
+
+        <include
+            android:id="@+id/emotion_anxious"
+            layout="@layout/item_emotion"/>
+
+        <include
+            android:id="@+id/emotion_angry"
+            layout="@layout/item_emotion"
+             />
+    </LinearLayout>
+</ScrollView>
