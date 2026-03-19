@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Nike</string>
+
+    <string name="hows_day">오늘 하루는 어땠나요?</string>
+    <string name="please_select">감정우표를 선택해주세요</string>
+    <string name="guide">선택한 감정우표를 기반으로 맞춤형 질문이 배달됩니다</string>
+
+    <string name="very_happy">더없이 행복한 하루였어요</string>
+    <string name="very_exciting">들뜨고 흥분돼요</string>
+    <string name="just_idle">평범한 하루였어요</string>
+    <string name="very_worry">생각이 많아지고 불안해요</string>
+    <string name="very_angry">부글부글 화가 나요</string>
+
+</resources>
