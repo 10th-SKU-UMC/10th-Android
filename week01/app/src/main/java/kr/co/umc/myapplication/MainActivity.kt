@@ -36,6 +36,7 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
 
         // 정적 UI 및 클릭리스너 세팅
+        binding.lyHappy.tvMood
         with(binding) {
             with(lyHappy) {
                 ivMood.apply {
