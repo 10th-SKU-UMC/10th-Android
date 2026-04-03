@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="208dp"
+    android:layout_height="356dp"
+    android:orientation="vertical"
+    android:padding="5dp">
+
+    <ImageView
+        android:id="@+id/imgProduct"
+        android:layout_width="184dp"
+        android:layout_height="184dp"
+        android:layout_marginLeft="12dp"
+        android:src="@drawable/img_sample_product_1"
+        android:contentDescription="상품 이미지" />
+
+    <LinearLayout
+        android:layout_width="184dp"
+        android:layout_height="184dp"
+        android:orientation="vertical"
+        android:layout_marginLeft="12dp"
+        android:layout_gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/tvProductName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            android:text="Nike Everyday Plus Cushioned" />
+
+        <TextView
+            android:id="@+id/tvProductDetail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="13sp"
+            android:text="Training Ankle Socks (6 Pairs)" />
+        <TextView
+            android:id="@+id/tvProductColours"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:text="5 Colours" />
+        <TextView
+            android:id="@+id/tvProductPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:textSize="14sp"
+            android:text="US$10" />
+    </LinearLayout>
+
+</LinearLayout>
