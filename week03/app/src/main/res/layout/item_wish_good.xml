@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+    
+    <ImageView
+        android:id="@+id/ivWishGood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_mid_socks"/>
+    
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="11dp"/>
+    
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:paddingHorizontal="14dp"
+        android:minHeight="128dp">
+
+        <TextView
+            android:id="@+id/tvWishGood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Air Jordan 1 Mid"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"/>
+
+        <TextView
+            android:id="@+id/tvWishGoodDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Training Ankle Socks (6 Pairs)"
+            android:textSize="14sp"
+            android:textColor="@color/grey"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tvWishGoodColorDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="5 Colours"
+            android:textSize="14sp"
+            android:textColor="@color/grey"
+            android:layout_marginTop="5dp"
+            android:visibility="gone"
+            tools:visibility="visible"/>
+
+        <TextView
+            android:id="@+id/tvWishGoodPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="US$125"
+            android:textSize="14sp"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            android:layout_marginTop="5dp"/>
+
+    </LinearLayout>
+
+</LinearLayout>
