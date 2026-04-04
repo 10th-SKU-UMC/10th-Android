@@ -4,6 +4,7 @@ import android.os.Bundle
 import android.view.View
 import androidx.fragment.app.Fragment
 import com.example.week2.databinding.FragmentBagBinding
+import com.google.android.material.bottomnavigation.BottomNavigationView
 
 class BagFragment : Fragment(R.layout.fragment_bag) {
     private var _binding: FragmentBagBinding? = null
@@ -18,7 +19,7 @@ class BagFragment : Fragment(R.layout.fragment_bag) {
         }
 
         binding.btnOrder.setOnClickListener {
-            val bottomNav = activity?.findViewById<com.google.android.material.bottomnavigation.BottomNavigationView>(R.id.bottom_navigation)
+            val bottomNav = activity?.findViewById<BottomNavigationView>(R.id.bottom_navigation)
             bottomNav?.selectedItemId = R.id.menu_buy
         }
     }

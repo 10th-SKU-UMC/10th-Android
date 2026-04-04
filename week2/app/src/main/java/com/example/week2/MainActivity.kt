@@ -1,14 +1,13 @@
 package com.example.week2
+
 import com.example.week2.R
 import android.os.Bundle
-import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.view.ViewCompat
-import androidx.core.view.WindowInsetsCompat
 import com.example.week2.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMainBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = ActivityMainBinding.inflate(layoutInflater)
@@ -23,6 +22,17 @@ class MainActivity : AppCompatActivity() {
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             changeFragment(item.itemId)
             true
+        }
+
+        supportFragmentManager.addOnBackStackChangedListener {
+            val currentFragment = supportFragmentManager.findFragmentById(R.id.main_container)
+
+            when (currentFragment) {
+                is HomeFragment -> binding.bottomNavigation.menu.findItem(R.id.menu_home).isChecked = true
+                is WishlistFragment -> binding.bottomNavigation.menu.findItem(R.id.menu_wishlist).isChecked = true
+                is BagFragment -> binding.bottomNavigation.menu.findItem(R.id.menu_bag).isChecked = true
+                is ProfileFragment -> binding.bottomNavigation.menu.findItem(R.id.menu_profile).isChecked = true
+            }
         }
     }
 
@@ -39,6 +49,12 @@ class MainActivity : AppCompatActivity() {
         supportFragmentManager.beginTransaction()
             .replace(R.id.main_container, fragment)
             .commit()
-
-        }
     }
+
+    fun moveToDetail() {
+        supportFragmentManager.beginTransaction()
+            .replace(R.id.main_container, DetailFragment())
+            .addToBackStack(null)
+            .commit()
+    }
+}
