@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="208dp"
+    android:layout_height="356dp"
+    android:minHeight="356dp"
+    android:background="@color/transparent">
+    
+    <ImageView
+        android:id="@+id/ivWishGood"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintDimensionRatio="1:1"
+        android:src="@drawable/img_mid_socks"/>
+
+    <TextView
+        android:id="@+id/tvWishGood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Air Jordan 1 Mid"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ivWishGood"
+        android:layout_marginTop="11dp"/>
+
+    <TextView
+        android:id="@+id/tvWishGoodDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Training Ankle Socks (6 Pairs)"
+        android:textSize="14sp"
+        android:textColor="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWishGood"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tvWishGoodColorDescription"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5 Colours"
+        android:textSize="14sp"
+        android:textColor="@color/grey"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWishGoodDescription"
+        android:layout_marginTop="5dp"/>
+
+    <TextView
+        android:id="@+id/tvWishGoodPrice"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="US$125"
+        android:textSize="14sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/tvWishGoodColorDescription"
+        android:layout_marginTop="5dp"/>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
