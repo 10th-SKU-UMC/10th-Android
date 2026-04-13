@@ -7,12 +7,12 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.recyclerview.widget.RecyclerView
 import com.example.week2.databinding.ItemHomeBinding
 
-class HomeAdapter(private val itemList: ArrayList<HomeData>) :
+class HomeAdapter(private val itemList: ArrayList<Data>) :
     RecyclerView.Adapter<HomeAdapter.HomeViewHolder>() {
 
     inner class HomeViewHolder(private val binding: ItemHomeBinding) :
         RecyclerView.ViewHolder(binding.root) {
-        fun bind(data: HomeData) {
+        fun bind(data: Data) {
             binding.ivItemPhoto.setImageResource(data.imgRes)
             binding.tvItemTitle.text = data.title
             binding.tvItemPrice.text = data.price

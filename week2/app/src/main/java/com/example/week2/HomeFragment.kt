@@ -15,8 +15,8 @@ class HomeFragment : Fragment(R.layout.fragment_home) {
         _binding = FragmentHomeBinding.bind(view)
 
         val homeList = arrayListOf(
-            HomeData(R.drawable.air_jordan, "Air Jordan XXXVI", "US$185"),
-            HomeData(R.drawable.air_force, "Nike Air Force 1'07", "US$115"),
+            Data(R.drawable.air_jordan, "Air Jordan XXXVI", getString(R.string.us_185),null),
+            Data(R.drawable.air_force, "Nike Air Force 1'07", "US$115", null)
         )
 
         val homeAdapter = HomeAdapter(homeList)

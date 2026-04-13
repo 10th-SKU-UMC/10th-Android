@@ -25,23 +25,23 @@ class WishlistFragment : Fragment() {
         recyclerView = view.findViewById(R.id.recyclerView)
 
         val dummyList = listOf(
-            WishlistData(
+            Data(
                 R.drawable.jordan1mid,
                 "Air Jordan 1 Mid",
-                "",
-                "US$125"
+                "US$125",
+                null
             ),
-            WishlistData(
+            Data(
                 R.drawable.socks,
                 "Nike Everyday Plus Cushioned",
-                "Training Ankle Socks (6 Pairs)",
-                "US$10"
+                "US$10",
+                null
             )
         )
 
         adapter = WishlistAdapter(dummyList) { item ->
             val bundle = Bundle().apply {
-                putInt("image", item.imageRes)
+                putInt("image", item.imgRes)
                 putString("title", item.title)
         }
 

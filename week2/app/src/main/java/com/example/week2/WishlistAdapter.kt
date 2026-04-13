@@ -8,8 +8,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class WishlistAdapter(
-    private val items: List<WishlistData>,
-    private val onClick: (WishlistData) -> Unit
+    private val items: List<Data>,
+    private val onClick: (Data) -> Unit
 ) : RecyclerView.Adapter<WishlistAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
@@ -17,8 +17,8 @@ class WishlistAdapter(
         val title = itemView.findViewById<TextView>(R.id.tv_wish_title)
         val price = itemView.findViewById<TextView>(R.id.tv_wish_price)
 
-        fun bind(item: WishlistData) {
-            image.setImageResource(item.imageRes)
+        fun bind(item: Data) {
+            image.setImageResource(item.imgRes)
             title.text = item.title
             price.text = item.price
 

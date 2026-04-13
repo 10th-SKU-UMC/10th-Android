@@ -13,10 +13,10 @@ class DetailFragment : Fragment(R.layout.fragment_detail) {
         super.onViewCreated(view, savedInstanceState)
         _binding = FragmentDetailBinding.bind(view)
 
-        val imageRes = arguments?.getInt("image") ?: R.drawable.photo
+        val imgRes = arguments?.getInt("image") ?: R.drawable.photo
         val title = arguments?.getString("title") ?: "상품명"
 
-        binding.ivDetailPhoto.setImageResource(imageRes)
+        binding.ivDetailPhoto.setImageResource(imgRes)
         binding.tvDetailTitle.text = title
 
         binding.btnBack.setOnClickListener {
