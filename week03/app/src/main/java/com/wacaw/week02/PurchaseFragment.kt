@@ -24,7 +24,7 @@ class PurchaseFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         // 샘플 데이터
-        val friendList = listOf(
+        val productList = listOf(
             ProductData("Nike Everyday Plus Cushioned", "Training Ankle Socks (6 Pairs)",R.drawable.image_sample_product_3,5,10),
             ProductData("Nike Elite Crew", "Basketball Socks",R.drawable.image_sample_product_4,7,16),
             ProductData("Nike Air Force 1 '07", "Women's Shoes",R.drawable.image_sample_product_5,5,115),
@@ -36,7 +36,7 @@ class PurchaseFragment : Fragment() {
 
         recyclerView.layoutManager = GridLayoutManager(requireContext(), 2)
 
-        recyclerView.adapter = ProductAdapter(friendList)
+        recyclerView.adapter = ProductAdapter(productList)
     }
 
 }
