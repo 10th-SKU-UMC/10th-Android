@@ -1,0 +1,129 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.core.widget.NestedScrollView
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".presentation.home.ui.HomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/homeFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glLeft"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.08"/>
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/glRight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.92"/>
+
+        <!-- 탑 배너 -->
+        <LinearLayout
+            android:id="@+id/lyTopBanner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginTop="50dp"
+            android:paddingHorizontal="24dp">
+
+            <TextView
+                android:id="@+id/tvTitle"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="Discover"
+                android:textSize="28sp"
+                android:textStyle="bold"
+                android:textColor="@color/black"
+                android:layout_gravity="start"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:id="@+id/tvDate"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="9월 4일 목요일"
+                android:textSize="16sp"
+                android:textColor="@color/grey"/>
+
+        </LinearLayout>
+
+        <ImageView
+            android:id="@+id/ivHomeBanner"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:src="@drawable/img_banner"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintTop_toBottomOf="@id/lyTopBanner" />
+
+
+        <!-- 최신 상품 -->
+        <LinearLayout
+            android:id="@+id/lyNewGoods"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintTop_toBottomOf="@id/ivHomeBanner"
+            app:layout_constraintStart_toStartOf="@id/glLeft"
+            app:layout_constraintEnd_toEndOf="@id/glRight"
+            android:orientation="vertical"
+            android:gravity="center_vertical"
+            android:layout_marginTop="10dp"
+            android:paddingHorizontal="24dp">
+
+            <TextView
+                android:id="@+id/tvWhatNew"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:text="What's new"
+                android:textSize="16sp"
+                android:textColor="@color/black"
+                android:layout_gravity="start"/>
+
+            <Space
+                android:layout_width="0dp"
+                android:layout_height="10dp"/>
+
+            <TextView
+                android:id="@+id/tvNewGoods"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="나이키 최신 상품"
+                android:textSize="28sp"
+                android:textColor="@color/grey"/>
+
+        </LinearLayout>
+        
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvNewGoods"
+            tools:listitem="@layout/item_new_good"
+            android:layout_width="wrap_content"
+            android:layout_height="0dp"
+            android:scrollbars="horizontal"
+            android:clipToPadding="false"
+            app:layout_constraintTop_toBottomOf="@id/lyNewGoods"
+            app:layout_constraintStart_toStartOf="@id/lyNewGoods"
+            android:paddingStart="24dp"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+            android:orientation="horizontal"
+            android:layout_marginTop="22dp"/>
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.core.widget.NestedScrollView>
