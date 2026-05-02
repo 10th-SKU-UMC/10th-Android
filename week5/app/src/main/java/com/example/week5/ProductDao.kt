@@ -1,4 +1,4 @@
-package com.example.week4
+package com.example.week5
 
 import androidx.room.Dao
 import androidx.room.Delete
@@ -26,17 +26,16 @@ interface ProductDao {
     //장바구니 상품 조회
     @Query("SELECT * FROM ProductTable WHERE isInBag=1")
     fun getInBagProducts(): List<ProductEntity>
-//
+    //상품 하나 조회
     @Query("SELECT * FROM ProductTable WHERE id = :productId")
     fun getProductId(productId: Int): ProductEntity?
-
+    //위시리스트 상태 바꿈
     @Query("UPDATE ProductTable SET isWishlisted = :isWishlisted WHERE id = :productId")
     fun updateWishlistState(productId: Int, isWishlisted: Boolean)
-
+    //장바구니 상태 변경
     @Query("UPDATE ProductTable SET isInBag = :isInBag WHERE id = :productId")
     fun updateBagState(productId: Int, isInBag: Boolean)
-
+    //카테고리별 상품 조회
     @Query("SELECT * FROM ProductTable WHERE category = :category")
     fun getProductsByCategory(category: String): List<ProductEntity>
-
 }

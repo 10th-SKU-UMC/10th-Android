@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.week4"
+    namespace = "com.example.week5"
     compileSdk =36
 
     defaultConfig {
-        applicationId = "com.example.week4"
+        applicationId = "com.example.week5"
         minSdk = 24
         targetSdk = 36
         versionCode = 1
@@ -47,7 +47,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
-    val roomVersion = "2.6.1"
+    val roomVersion = "2.7.2"
     implementation("androidx.room:room-runtime:$roomVersion")
     implementation("androidx.room:room-ktx:$roomVersion")
     ksp("androidx.room:room-compiler:$roomVersion")
@@ -57,5 +57,6 @@ dependencies {
     implementation("com.squareup.okhttp3:logging-interceptor:4.12.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.8.0")
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-android:1.8.0")
+    implementation("com.github.bumptech.glide:glide:4.16.0")
 }
 
