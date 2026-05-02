@@ -8,11 +8,7 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
-import com.wacaw.week02.adapter.NewProductAdapter
 import com.wacaw.week02.adapter.ProductAdapter
-import com.wacaw.week02.data.ProductData
 import com.wacaw.week02.data.database.ProductDatabase
 import com.wacaw.week02.data.repository.ProductRepository
 import com.wacaw.week02.databinding.FragmentPurchaseBinding
