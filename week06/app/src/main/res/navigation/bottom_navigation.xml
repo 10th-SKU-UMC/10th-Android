@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/bottom_navigation"
+    app:startDestination="@id/menu_home">
+
+    <fragment
+        android:id="@+id/menu_home"
+        android:name="kr.co.umc.nike.presentation.home.ui.HomeFragment"
+        tools:layout="@layout/fragment_home">
+
+    </fragment>
+
+    <fragment
+        android:id="@+id/menu_buy"
+        android:name="kr.co.umc.nike.presentation.buy.ui.BuyFragment"
+        tools:layout="@layout/fragment_buy"/>
+
+    <fragment
+        android:id="@+id/menu_wish"
+        android:name="kr.co.umc.nike.presentation.wish.ui.WishFragment"
+        tools:layout="@layout/fragment_wish"/>
+
+    <fragment
+        android:id="@+id/menu_bag"
+        android:name="kr.co.umc.nike.presentation.bag.ui.BagFragment"
+        tools:layout="@layout/fragment_bag"/>
+
+    <fragment
+        android:id="@+id/menu_profile"
+        android:name="kr.co.umc.nike.presentation.profile.ui.ProfileFragment"
+        tools:layout="@layout/fragment_profile"/>
+
+</navigation>
+
+
