@@ -32,7 +32,7 @@ class ProfileFragment : Fragment(R.layout.fragment_profile) {
                 val response = ApiClient.profileService.getUser(1)
 
                 if (response.isSuccessful) {
-                    val user = response.body()?.get("data") ?: return@launch
+                    val user = response.body()?.data ?: return@launch
 
                     binding.tvNickname.text = "${user.first_name} ${user.last_name}"
 

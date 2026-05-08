@@ -8,7 +8,6 @@ class MainActivity : AppCompatActivity() {
     lateinit var binding: ActivityMainBinding
         private set
     lateinit var db: ProductDatabase
-    //ProductDatabase라는 클래스에서 만들어진 객체가 들어간다
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -16,13 +15,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         db = ProductDatabase.getDatabase(this)
-        insertInitialProducts()
 
-        if (savedInstanceState == null) {
-            supportFragmentManager.beginTransaction()
-                .replace(R.id.main_container, HomeFragment())
-                .commit()
-        }
+        // 초기 상품 삽입을 먼저 끝내고 그 다음에 Fragment 표시 (race condition 방지)
+        Thread {
+            insertInitialProducts()
+            runOnUiThread {
+                if (savedInstanceState == null) {
+                    supportFragmentManager.beginTransaction()
+                        .replace(R.id.main_container, HomeFragment())
+                        .commit()
+                }
+            }
+        }.start()
 
         binding.bottomNavigation.setOnItemSelectedListener { item ->
             changeFragment(item.itemId)
@@ -40,68 +44,63 @@ class MainActivity : AppCompatActivity() {
             }
         }
     }
-    private fun insertInitialProducts(){
-        Thread {
-            val dao=db.productDao()
 
-            if (dao.getAllProducts().isEmpty()) {
-                dao.insertProduct(
-                    ProductEntity(
-                        imgRes = R.drawable.air_jordan,
-                        title = "Air Jordan XXXVI",
-                        price = getString(R.string.us_185),
-                        description = "Best seller shoes",
-                        isBestSeller = true,
-                        category="sale"
-                    )
+    private fun insertInitialProducts() {
+        val dao = db.productDao()
+        if (dao.getAllProducts().isEmpty()) {
+            dao.insertProduct(
+                ProductEntity(
+                    imgRes = R.drawable.air_jordan,
+                    title = "Air Jordan XXXVI",
+                    price = getString(R.string.us_185),
+                    description = "Best seller shoes",
+                    isBestSeller = true,
+                    category = "sale"
                 )
-                dao.insertProduct(
-                    ProductEntity(
-                        imgRes = R.drawable.air_force,
-                        title = "Nike Air Force 1'07",
-                        price = "US$115",
-                        description = "Classic Nike shoes",
-                        isBestSeller = true,
-                        isInBag = true,
-                        category = null
-                    )
+            )
+            dao.insertProduct(
+                ProductEntity(
+                    imgRes = R.drawable.air_force,
+                    title = "Nike Air Force 1'07",
+                    price = "US$115",
+                    description = "Classic Nike shoes",
+                    isBestSeller = true,
+                    isInBag = true,
+                    category = null
                 )
-
-                dao.insertProduct(
-                    ProductEntity(
-                        imgRes = R.drawable.socks,
-                        title = "Nike Everyday Plus Cushioned",
-                        price = "US$10",
-                        description = "Comfortable socks",
-                        isWishlisted = true,
-                        category = "sale"
-                    )
+            )
+            dao.insertProduct(
+                ProductEntity(
+                    imgRes = R.drawable.socks,
+                    title = "Nike Everyday Plus Cushioned",
+                    price = "US$10",
+                    description = "Comfortable socks",
+                    isWishlisted = true,
+                    category = "sale"
                 )
-
-                dao.insertProduct(
-                    ProductEntity(
-                        imgRes = R.drawable.nikeelitecrew,
-                        title = "Nike Elite Crew",
-                        price = "US$16",
-                        description = "Sports socks",
-                        category = null
-                    )
+            )
+            dao.insertProduct(
+                ProductEntity(
+                    imgRes = R.drawable.nikeelitecrew,
+                    title = "Nike Elite Crew",
+                    price = "US$16",
+                    description = "Sports socks",
+                    category = null
                 )
-
-                dao.insertProduct(
-                    ProductEntity(
-                        imgRes = R.drawable.jordan1mid,
-                        title = "Air Jordan 1 Mid",
-                        price = "US$125",
-                        description = "Jordan shoes",
-                        isWishlisted = true,
-                        category = null
-                    )
+            )
+            dao.insertProduct(
+                ProductEntity(
+                    imgRes = R.drawable.jordan1mid,
+                    title = "Air Jordan 1 Mid",
+                    price = "US$125",
+                    description = "Jordan shoes",
+                    isWishlisted = true,
+                    category = null
                 )
-
-            }
-        }.start()
+            )
+        }
     }
+
     fun changeFragment(menuId: Int) {
         val fragment = when (menuId) {
             R.id.menu_home -> HomeFragment()
