@@ -79,6 +79,8 @@ class ProfileFragment : Fragment() {
                         is UiState.Idle -> Unit
 
                         is UiState.Loading -> {
+                            // 이 블록에 프로그레스 바를 띄우는 등의 방식으로 사용자에게 로딩 중임을 알리는 로직을 넣어
+                            // UX를 개선할 수 있음.
                             Timber.d("프로필 로딩 중")
                             binding.rvFollowingUsers.visibility = View.INVISIBLE
                             binding.pbRvLoading.visibility = View.VISIBLE
@@ -100,6 +102,7 @@ class ProfileFragment : Fragment() {
                         }
 
                         is UiState.Error -> {
+                            // 여기에 에러 모달창이나 에러 토스트 메세지를 띄우는 로직을 작성하면 됨
                             Timber.e("프로필 로드 실패: ${state.message}")
                         }
                     }

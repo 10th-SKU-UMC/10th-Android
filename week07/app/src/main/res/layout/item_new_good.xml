@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:background="@color/transparent">
+
+    <ImageView
+        android:id="@+id/ivNewGood"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/img_air_jordan"/>
+
+    <Space
+        android:layout_width="wrap_content"
+        android:layout_height="20dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
+        
+        <TextView
+            android:id="@+id/tvNewGood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Air Jordan XXXVI"
+            android:textColor="@color/black"
+            android:textSize="14sp"/>
+        
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="16dp"/>
+
+        <TextView
+            android:id="@+id/tvNewGoodPrice"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="US$185"
+            android:textColor="@color/grey"
+            android:textSize="14sp"/>
+        
+    </LinearLayout>
+
+</LinearLayout>
