@@ -12,11 +12,10 @@ import dagger.hilt.components.SingletonComponent
 import javax.inject.Singleton
 
 @Module
-@InstallIn(SingletonComponent::class) // 앱 전체에서 하나만 유지
+@InstallIn(SingletonComponent::class)
 object DatabaseModule {
-
     @Provides
-    @Singleton // ← DB는 무조건 하나만! 호출마다 새로 만들면 안 됨
+    @Singleton
     fun provideProductDatabase(
         @ApplicationContext context: Context
     ): ProductDatabase {

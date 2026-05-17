@@ -49,7 +49,7 @@ interface ProductDao {
     @Query("UPDATE ProductTable SET isInBag = :isInBag WHERE id = :productId")
     suspend fun updateBagState(productId: Int, isInBag: Boolean)
 
-    // 카테고리별 상품 조회 (Flow)
+    // 카테고리별 상품 조회
     @Query("SELECT * FROM ProductTable WHERE category = :category")
     fun getProductsByCategoryFlow(category: String): Flow<List<ProductEntity>>
 }
