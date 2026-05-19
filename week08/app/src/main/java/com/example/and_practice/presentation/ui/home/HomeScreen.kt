@@ -70,7 +70,6 @@ fun HomeScreen(
             .systemBarsPadding()
             .verticalScroll(rememberScrollState())
     ) {
-        // 헤더 타이틀 - 양옆 17dp
         Column(
             modifier = Modifier
                 .padding(horizontal = 17.dp, vertical = 24.dp)
@@ -86,7 +85,6 @@ fun HomeScreen(
             )
         }
 
-        // 메인 이미지 - 양옆 17dp, 화면을 꽉 채우게 크게
         Image(
             painter = painterResource(id = R.drawable.home_logo),
             contentDescription = "홈 이미지",
@@ -97,7 +95,6 @@ fun HomeScreen(
             contentScale = ContentScale.Crop
         )
 
-        // What's new 섹션 타이틀 - 양옆 17dp
         Column(
             modifier = Modifier
                 .padding(horizontal = 17.dp)
