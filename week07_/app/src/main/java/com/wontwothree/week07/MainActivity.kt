@@ -33,8 +33,8 @@ class MainActivity : ComponentActivity() {
                             onTabSelected = { destination ->
                                 navController.navigate(destination) {
                                     popUpTo(AppDestination.Home) { saveState = true }
-                                    launchSingleTop = true
-                                    restoreState = true
+                                    launchSingleTop = true // 중복 생성 방지
+                                    restoreState = true // 화면 상태 유지
                                 }
                             }
                         )
