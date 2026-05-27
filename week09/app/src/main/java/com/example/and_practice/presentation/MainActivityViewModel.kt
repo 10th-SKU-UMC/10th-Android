@@ -8,11 +8,11 @@ import javax.inject.Inject
 
 data class MainActivityUiState(
     val isReady: Boolean = true
-) : UiState
+)
 
 sealed interface MainActivityEvent : UiEvent
 
 @HiltViewModel
 class MainActivityViewModel @Inject constructor() : BaseViewModel<MainActivityUiState, MainActivityEvent>(
-    initialState = MainActivityUiState()
+    initialState = UiState.Success(MainActivityUiState())
 )

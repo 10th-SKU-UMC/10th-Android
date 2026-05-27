@@ -7,6 +7,7 @@ import androidx.compose.ui.graphics.Color
 data class AndPracticeColorScheme(
     val primaryBlack: Color,
     val primaryWhite: Color,
+    val gray100: Color,
     val gray200: Color,
     val gray300: Color,
     val gray600: Color,
@@ -19,6 +20,7 @@ data class AndPracticeColorScheme(
 internal val DefaultAndPracticeColorScheme = AndPracticeColorScheme(
     primaryBlack = Color(0xFF000000),
     primaryWhite = Color(0xFFFFFFFF),
+    gray100 = Color(0xFFF6F6F6),
     gray200 = Color(0xFFE4E4E4),
     gray300 = Color(0xFFCDCDCD),
     gray600 = Color(0xFF767676),

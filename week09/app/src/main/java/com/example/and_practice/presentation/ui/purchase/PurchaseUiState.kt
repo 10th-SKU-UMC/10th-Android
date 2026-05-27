@@ -1,10 +1,10 @@
 package com.example.and_practice.presentation.ui.purchase
 
 import com.example.and_practice.core.ui.UiEvent
-import com.example.and_practice.core.ui.UiState
+import com.example.and_practice.data.mock.MockProductData
 
-data class PurchaseUiState(
-    val title: String = "구매하기"
-) : UiState
+data class PurchaseData(
+    val products: List<MockProductData>
+)
 
 sealed interface PurchaseEvent : UiEvent

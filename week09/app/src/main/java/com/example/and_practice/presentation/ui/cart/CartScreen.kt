@@ -30,13 +30,15 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import com.example.and_practice.R
+import com.example.and_practice.core.ui.UiState
 
 @Composable
 fun CartRoute(
     onNavigateToPurchase: () -> Unit,
     viewModel: CartViewModel = viewModel()
 ) {
-    val uiState by viewModel.uiState.collectAsState()
+    val wrapper by viewModel.uiState.collectAsState()
+    val uiState = (wrapper as? UiState.Success)?.data ?: CartUiState()
 
     CartScreen(
         uiState = uiState,

@@ -4,17 +4,19 @@ import androidx.compose.runtime.Composable
 import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
-import androidx.lifecycle.viewmodel.compose.viewModel
+import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.and_practice.core.ui.UiState
 
 @Composable
 fun SplashRoute(
     onNavigateToHome: () -> Unit,
-    viewModel: SplashViewModel = viewModel()
+    viewModel: SplashViewModel = hiltViewModel()
 ) {
-    val uiState by viewModel.uiState.collectAsState()
+    val wrapper by viewModel.uiState.collectAsState()
+    val data = (wrapper as? UiState.Success)?.data ?: SplashUiState()
 
-    LaunchedEffect(uiState.shouldNavigateToHome) {
-        if (uiState.shouldNavigateToHome) {
+    LaunchedEffect(data.shouldNavigateToHome) {
+        if (data.shouldNavigateToHome) {
             onNavigateToHome()
         }
     }

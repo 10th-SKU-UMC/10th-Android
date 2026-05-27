@@ -5,6 +5,7 @@ import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.collectAsState
 import androidx.compose.runtime.getValue
 import androidx.hilt.navigation.compose.hiltViewModel
+import com.example.and_practice.core.ui.UiState
 import com.example.and_practice.presentation.ui.purchase.FavoriteViewModel
 
 @Composable
@@ -14,7 +15,9 @@ fun HomeRoute(
     favoriteViewModel: FavoriteViewModel,
     onProductClick: (Int) -> Unit = {}
 ) {
-    val uiState by viewModel.uiState.collectAsState()
+    val wrapper by viewModel.uiState.collectAsState()
+    // HomeViewModel은 항상 Success — Loading/Error 상태 없음
+    val uiState = (wrapper as? UiState.Success)?.data ?: HomeUiState()
 
     LaunchedEffect(title) {
         viewModel.updateHome(title)
