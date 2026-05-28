@@ -55,11 +55,11 @@ private fun ProfileContent(
     ) {
         Spacer(modifier = Modifier.height(32.dp))
 
-        // 공간을 미리 차지할 박스
         Box(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(160.dp)
+                .height(160.dp),
+            contentAlignment = Alignment.Center
         ) {
             profileState.consume {
                 idle {
@@ -67,22 +67,16 @@ private fun ProfileContent(
                 }
 
                 loading {
-                    // 로딩 중엔 CircularProgressIndicator 출력
-                    Box(
-                        modifier = Modifier.fillMaxSize(),
-                        contentAlignment = Alignment.Center
-                    ) {
-                        CircularProgressIndicator()
-                    }
+                    UserInfoSection(
+                        profile = null,
+                        isLoading = true
+                    )
                 }
 
                 success {
-                    val profile = it.firstOrNull() ?: return@success
                     UserInfoSection(
-                        profile = profile,
-                        modifier = Modifier
-                            .fillMaxWidth()
-                            .wrapContentWidth(Alignment.CenterHorizontally)
+                        profile = it.first(),
+                        isLoading = false
                     )
                 }
 
@@ -134,7 +128,11 @@ private fun ProfileContent(
         // 이미지 리스트
         profileState.consume {
             loading {
-
+                ImageGallery(
+                    profiles = emptyList(),
+                    isApiLoading = true,
+                    modifier = Modifier.fillMaxWidth()
+                )
             }
 
             success {
