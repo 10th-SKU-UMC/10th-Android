@@ -18,7 +18,6 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.week7.R
 
-@Preview(showBackground = true)
 @Composable
 fun HomeScreen() {
     Column(

@@ -1,7 +1,7 @@
-package com.example.week8.navigation
+package com.example.week9.navigation
 
 import androidx.annotation.DrawableRes
-import com.example.week8.R
+import com.example.week9.R
 import kotlinx.serialization.Serializable
 
 sealed interface AppDestination {
@@ -15,6 +15,8 @@ sealed interface AppDestination {
     data object Bag : AppDestination
     @Serializable
     data object Profile : AppDestination
+    @Serializable
+    data object ProfileEdit: AppDestination
 }
 enum class BottomTab(
     val label: String,
