@@ -1,4 +1,4 @@
-package com.example.week9.ui.screen
+package com.example.week10.ui.screen
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -40,9 +40,10 @@ import androidx.compose.ui.unit.sp
 import androidx.lifecycle.viewmodel.compose.viewModel
 import androidx.navigation.NavHostController
 import coil.compose.AsyncImage
-import com.example.week9.R
-import com.example.week9.navigation.AppDestination
-import com.example.week9.viewmodel.ProfileViewModel
+import com.example.week10.navigation.AppDestination
+import com.example.week10.viewmodel.ProfileViewModel
+import com.example.week10.R
+
 
 @Composable
 fun ProfileScreen(
