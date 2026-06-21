@@ -1,4 +1,4 @@
-package com.example.week9.ui
+package com.example.week10.ui
 
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.padding
@@ -14,16 +14,16 @@ import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.example.week9.navigation.AppDestination
-import com.example.week9.navigation.BottomTab
-import com.example.week9.ui.component.AppBottomBar
-import com.example.week9.ui.screen.BagScreen
-import com.example.week9.ui.screen.BuyScreen
-import com.example.week9.ui.screen.HomeScreen
-import com.example.week9.ui.screen.ProfileEditScreen
-import com.example.week9.ui.screen.ProfileScreen
-import com.example.week9.ui.screen.WishlistScreen
-import com.example.week9.viewmodel.ProductViewModel
+import com.example.week10.navigation.AppDestination
+import com.example.week10.navigation.BottomTab
+import com.example.week10.ui.component.AppBottomBar
+import com.example.week10.ui.screen.BagScreen
+import com.example.week10.ui.screen.BuyScreen
+import com.example.week10.ui.screen.HomeScreen
+import com.example.week10.ui.screen.ProfileEditScreen
+import com.example.week10.ui.screen.ProfileScreen
+import com.example.week10.ui.screen.WishlistScreen
+import com.example.week10.viewmodel.ProductViewModel
 
 @Composable
 fun MainScreen() {

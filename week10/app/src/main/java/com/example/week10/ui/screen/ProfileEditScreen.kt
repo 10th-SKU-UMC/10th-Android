@@ -1,4 +1,4 @@
-package com.example.week9.ui.screen
+package com.example.week10.ui.screen
 
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
